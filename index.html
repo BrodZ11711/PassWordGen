@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Generate A Password!</title>
-    <link rel="stylesheet" href="./Assets/css/reset.css" />
-    <link rel="stylesheet" href="./Assets/css/style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>The Most <del>Un-</del>forgettable Password Generator!</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-          <p>A password so secure, even you will forget it!</p>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Let'd do this!</button>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "./assets/script.js" defer></script>
+    <link rel = "stylesheet" href="./assets/styles.css">
+    <title>Random Password Gen</title>
+</head>
+<body>
+    <div class = "container-card">
+        <!-- Title Heading and Password PLaceholder -->
+        <h1 class = "title">Random Password Generator</h1>
+        <h3 class = "passDisplay" id = "passDisplay">Password Goes Here</h3>
+        
+        <form id = "passwordGenForm"class = "form">
+            <!-- This will be the user inputs to determine their password-->
+            <label for="characterAmountNum"># Of Characters</label>
+
+            <!-- The # Amount is wrapped in a div, as to controll it in the Stylesheet-->
+            <div class = "charAmountRangeContainer">
+                <!-- Min and Max charcters are set, default is set to 10, and we give it an ID to call upon later -->
+                <input type="range" min = "8" max = "128" value = "10"
+                                    id = "characterAmountRange">
+                <input class = "\"type="number" min = "8" max = "128" value = "10"
+                                    id = "characterAmountNum">
+            </div>
+
+            <!-- The next lot of code will be for the user to select a checkbox to determine their password attributes-->
+            <label for = "checkUpper">Uppercase?</label>
+            <input type="checkbox" id = "checkUpper">
+
+            <label for = "checkNum">Numbers?</label>
+            <input type="checkbox" id = "checkNum">
+
+            <label for = "checkSym">Symbols?</label>
+            <input type="checkbox" id = "checkSym">
+
+            <!-- Creating the button for the user to get their generated password-->
+            <button type = "submit" class = "genBTN">Get Yo Password</button>
+        </form>
     </div>
-    <script src="./Assets/jsp/script.js"></script>
-  </body>
+</body>
 </html>
